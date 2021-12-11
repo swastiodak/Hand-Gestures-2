@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>
+        Hand gestures to emojis
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h3 class="heading btn btn-info" style="font-size: large;">HAND GESTURES TO EMOJIS
+                <br>
+                <br>
+                👍🏽|👎🏽|✌🏽|✋🏽
+            </h3>
+            <br>
+            <br>
+
+            <p style="font-size: 22px;"> Take a picture of a hand gesture to generate an emoji. You can chose: ✋🏽, ✌🏽,
+                👎🏽 or 👍🏽.
+                <br>
+                <br>
+                </p>
+                <span>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <label> Webcam view</label>
+                    <div id="camera"></div>
+                    <br>
+                    <br>
+                    <button onclick="takeSnapshot()" class="btn btn-info">Capture Image</button>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <label>Prediction 1</label>
+                    <p class="emotion_name" id="resultGestureName1"></p>
+                    <p class="emoji" id="updateEmoji1"></p>
+    
+                    <label>Prediction 2</label>
+                    <p class="emotion_name" id="resultGestureName2"></p>
+                    <p class="emoji" id="updateEmoji2"></p>
+                </div>
+             
+            </span>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <label> Captured Image </label>
+                <div id="result"></div>
+                <br>
+                <br>
+                <button onclick="predict()" class="btn btn-info">Identify Image</button>
+            </div>
+        </center>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
